@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Nicolas Garnier">
+    <title>Trade Helper</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+    <div class="form">
+
+        <div class="form-element">
+            <label for="capital" class="label">Capital</label>
+            <input type="number" step="any" id="capital" oninput="onCapitalChange(this.value)" />
+        </div>
+
+        <div class="form-element">
+            <label for="limit" class="label">Limite pour 1%</label>
+            <input type="number" id="limit" disabled />
+        </div>
+
+        <div class="form-element">
+            <label for="price" class="label">Prix de l'action</label>
+            <input type="number" id="price" oninput="onPriceChange(this.value)" />
+        </div>
+
+        <div class="form-element">
+            
+            <span class="label">Risk / Reward (R/R)</span>
+
+            <div class="sub-element">
+                <label for="reword">Gain</label>
+                <input type="number" id="reword" oninput="onRewordChange(this.value)" />
+            </div>
+            
+            <div class="sub-element">
+                <label for="risk">Perte</label>
+                <input type="number" id="risk" oninput="onRiskChange(this.value)" />
+            </div>
+        </div>
+
+        <div class="form-element">
+            <label for="tp" class="label">Take Profit</label>
+            <input type="number" id="tp" oninput="onTakeProfitChange(this.value)" />
+        </div>
+
+        <div class="form-element">
+            <label for="sl" class="label">Stop Loss</label>
+            <input type="number" id="sl" oninput="onStopLossChange(this.value)" />
+        </div>
+
+    </div>
+
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

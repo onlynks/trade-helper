@@ -1,0 +1,90 @@
+:root {
+    --bleu: #8083ff;
+}
+
+@font-face {
+    font-family: Roboto;
+    src:
+        url("Roboto/Roboto-Regular.ttf") format('woff2'),
+        url("Roboto/Roboto-Black.ttf") format('woff2'),
+        url("Roboto/Roboto-BlackItalic.ttf") format('woff2'),
+        url("Roboto/Roboto-Bold.ttf") format('woff2'),
+        url("Roboto/Roboto-BoldItalic.ttf") format('woff2'),
+        url("Roboto/Roboto-Italic.ttf") format('woff2'),
+        url("Roboto/Roboto-Light.ttf") format('woff2'),
+        url("Roboto/Roboto-LightItalic.ttf") format('woff2'),
+        url("Roboto/Roboto-Medium.ttf") format('woff2'),
+        url("Roboto/Roboto-MediumItalic.ttf") format('woff2'),
+        url("Roboto/Roboto-Thin.ttf") format('woff2'),
+        url("Roboto/Roboto-ThinItalic.ttf") format('woff2')
+}
+
+html, body {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    font-family: Roboto;
+    font-size: 20px;
+    background-color: #232323;
+    margin: 0;
+}
+
+.form {
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    padding: 5em;
+    background-color: #3f3f3f;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 30px #0e0e0e;
+    border: 2px solid var(--bleu);
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.sub-element {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.sub-element label {
+    width: 100px;
+}
+
+input {
+    border: none;
+    outline: none;
+    font-size: inherit;
+    padding: 0.5em;
+    background-color: #4f4f4f;
+    color: inherit;
+    transition: 0.4s;
+    box-shadow: unset;
+    border-radius: 5px;
+}
+
+input:disabled {
+    background-color: unset;
+    color: var(--bleu);
+}
+
+input:focus {
+    box-shadow: 0 0 0 2px var(--bleu);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none
+}
