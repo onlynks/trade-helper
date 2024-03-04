@@ -78,6 +78,7 @@ input {
 input:disabled {
     background-color: unset;
     color: var(--bleu);
+    font-size: 25px;
 }
 
 input:focus {

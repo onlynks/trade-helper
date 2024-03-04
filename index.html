@@ -20,8 +20,8 @@
         </div>
 
         <div class="form-element">
-            <label for="limit" class="label">Limite pour 1%</label>
-            <input type="number" id="limit" disabled />
+            <label for="risk-max" class="label">Risque maximum en %</label>
+            <input type="number" id="risk-max" oninput="onRiskMaxChange(this.value)" />
         </div>
 
         <div class="form-element">
@@ -30,14 +30,14 @@
         </div>
 
         <div class="form-element">
-            
+
             <span class="label">Risk / Reward (R/R)</span>
 
             <div class="sub-element">
                 <label for="reword">Gain</label>
                 <input type="number" id="reword" oninput="onRewordChange(this.value)" />
             </div>
-            
+
             <div class="sub-element">
                 <label for="risk">Perte</label>
                 <input type="number" id="risk" oninput="onRiskChange(this.value)" />
@@ -52,6 +52,11 @@
         <div class="form-element">
             <label for="sl" class="label">Stop Loss</label>
             <input type="number" id="sl" oninput="onStopLossChange(this.value)" />
+        </div>
+
+        <div class="form-element">
+            <label for="max-invest" class="label">Investissement maximum</label>
+            <input type="number" id="max-invest" disabled />
         </div>
 
     </div>

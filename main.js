@@ -1,6 +1,6 @@
 
 let capital = 100000;
-let lossPerTrade = 1;
+let riskMax = 1;
 let price = 500;
 let reword = 2;
 let risk = 1;
@@ -11,8 +11,8 @@ const capitalInput = document.getElementById("capital");
 capitalInput.value = capital;
 capitalInput.select();
 
-const limitInput = document.getElementById("limit");
-limitInput.value = capital * (lossPerTrade / 100) / (risk / 100);
+const riskMaxInput = document.getElementById("risk-max");
+riskMaxInput.value = riskMax;
 
 const priceInput = document.getElementById("price");
 priceInput.value = price;
@@ -30,9 +30,17 @@ tpInput.value = tp;
 const slInput = document.getElementById("sl");
 slInput.value = sl;
 
+const maxInvestInput = document.getElementById("max-invest");
+maxInvestInput.value = capital * (riskMax / 100) / (risk / 100);
+
 function onCapitalChange(newCapital) {
     capital = newCapital;
-    setLimit();
+    setMaxInvest();
+}
+
+function onRiskMaxChange(newRiskMax) {
+    riskMax = newRiskMax;
+    setMaxInvest();
 }
 
 function onPriceChange(newPrice) {
@@ -50,7 +58,7 @@ function onRewordChange(newReword) {
 function onRiskChange(newRisk) {
     risk = newRisk;
     setSl();
-    setLimit();
+    setMaxInvest();
 }
 
 function onTakeProfitChange(newTp) {
@@ -61,11 +69,11 @@ function onTakeProfitChange(newTp) {
 function onStopLossChange(newSl) {
     sl = newSl;
     setRisk();
-    setLimit();
+    setMaxInvest();
 }
 
-function setLimit() {
-    limitInput.value = capital * 0.01 / (risk / 100);
+function setMaxInvest() {
+    maxInvestInput.value = capital * (riskMax / 100) / (risk / 100);
 }
 
 function setTp() {
